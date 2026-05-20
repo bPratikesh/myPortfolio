@@ -11,12 +11,12 @@ const navLinks = [
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
-    <header className="fixed top-0 left-0 right-0 bg-transparent py-5">
+    <header className="fixed top-0 left-0 right-0 py-1 z-50 backdrop-blur-md bg-background/90 border-b border-border/50">
       <nav className="container mx-auto px-6 flex item-center justify-between">
         <a
           href="https://www.linkedin.com/in/pratikesh-borade-059226190/"
           target="_blank"
-          className="text-xl font-bold tracking-tight hover:text-muted-foreground "
+          className="text-xl font-bold tracking-tight py-4 hover:text-muted-foreground "
         >
           PB <span className="text-blue-400">.</span>
         </a>
@@ -36,7 +36,7 @@ export const Navbar = () => {
         </div>
 
         {/* CTA(Contact Me Button) */}
-        <div className="hidden md:block">
+        <div className="hidden md:block py-3">
           <Button size="sm">Contact Me</Button>
         </div>
 
