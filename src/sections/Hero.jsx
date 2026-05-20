@@ -55,9 +55,9 @@ export const Hero = () => {
                 </span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Pratikesh Borade - a Software Engineer specializing in
-                Java, Spring Boot, React and Next.js. I build scalable,
-                performant web applications that users love.
+                Hi, I'm Pratikesh Borade — a Software Developer focused on
+                building scalable, efficient, and user-friendly web
+                applications.
               </p>
             </div>
 
@@ -66,7 +66,10 @@ export const Hero = () => {
               <Button>
                 Contact me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton />
+              <AnimatedBorderButton>
+                <Download className="w-5 h-5" />
+                Download CV
+              </AnimatedBorderButton>
             </div>
           </div>
           {/* Right column Profile image */}
@@ -85,7 +88,7 @@ export const Hero = () => {
         </div>
         {/* Skills section */}
         <div className="mt-20 animate-fade-in animation-delay-600">
-          <p className="text-sm text-muted-foreground mb-6 text-center">
+          <p className="text-lg text-muted-foreground mb-6 text-center">
             Technologies I work with
           </p>
           <div className="relative overflow-hidden">
