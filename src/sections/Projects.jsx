@@ -5,15 +5,17 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 const projects = [
   {
     title: "Uber Cab Booking Clone",
-    description: "akjsdn",
+    description:
+      "An Uber-inspired ride-hailing web application built using Spring Boot, featuring ride booking, user management, and fare calculation. Developed with industry-style backend APIs to simulate real-world cab booking and driver management workflows.",
     image: "/Projects/uberProject.png",
     tags: ["Java", "Spring Boot", "Docker", "PostgreSQL"],
     link: "#",
-    github: "#",
+    github: "https://github.com/bPratikesh/UberApp",
   },
   {
     title: "Air BNB Hotel room Booking Clone",
-    description: "akjsdn",
+    description:
+      "An Airbnb-inspired hotel booking web application designed for property browsing, room booking, and user management. Built to simulate real-world booking workflows with a responsive interface and scalable backend functionality.",
     image: "/Projects/airBnbProject.png",
     tags: [
       "Java",
@@ -24,7 +26,7 @@ const projects = [
       "PostgreSQL",
     ],
     link: "#",
-    github: "#",
+    github: "https://github.com/bPratikesh/hotelBooking-frontend",
   },
 ];
 
@@ -47,7 +49,9 @@ export const Projects = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            A selection of my prjects wich I have worked on.................
+            Showcasing projects that helped me grow as a developer through
+            practical learning while strengthening my skills in full-stack
+            development, scalable backend systems, and modern web technologies.
           </p>
         </div>
         {/* Projects grid */}
@@ -58,13 +62,13 @@ export const Projects = () => {
               className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
               style={{ animationDelay: `${(index + 1) * 100}ms` }}
             >
-              <div className="relative overflow-hidden aspect-video">
+              <div className="relative overflow-hidden h-65">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent backdrop-opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/5 to-transparent backdrop-opacity-10" />
                 {/* Overlay Links(actualweb link and github link) */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
@@ -111,10 +115,15 @@ export const Projects = () => {
         </div>
         {/* View all projects CTA */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
+          <a
+            href="https://github.com/bPratikesh?tab=repositories"
+            target="_blank"
+          >
+            <AnimatedBorderButton>
+              View All Projects
+              <ArrowUpRight className="w-5 h-5" />
+            </AnimatedBorderButton>
+          </a>
         </div>
       </div>
     </section>

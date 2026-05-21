@@ -3,25 +3,24 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
-  { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "#experience", label: "Experience" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <header className="fixed top-0 left-0 right-0 py-1 z-50 backdrop-blur-md bg-background/90 border-b border-border/50">
-      <nav className="container mx-auto px-6 flex item-center justify-between">
+      <nav className="container mx-auto px-6 flex item-center justify-between relative">
         <a
-          href="https://www.linkedin.com/in/pratikesh-borade-059226190/"
-          target="_blank"
+          href="#"
           className="text-xl font-bold tracking-tight py-4 hover:text-muted-foreground "
         >
           PB <span className="text-blue-400">.</span>
         </a>
 
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2 py-1">
           <div className="glass rounded-full px-2 py-1 flex items-center gap-1">
             {navLinks.map((link, index) => (
               <a
@@ -33,11 +32,6 @@ export const Navbar = () => {
               </a>
             ))}
           </div>
-        </div>
-
-        {/* CTA(Contact Me Button) */}
-        <div className="hidden md:block py-3">
-          <Button size="sm">Contact Me</Button>
         </div>
 
         {/* Mobile Menu Button */}
