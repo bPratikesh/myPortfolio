@@ -4,15 +4,6 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 
 const projects = [
   {
-    title: "Uber Cab Booking Clone",
-    description:
-      "An Uber-inspired ride-hailing web application built using Spring Boot, featuring ride booking, user management, and fare calculation. Developed with industry-style backend APIs to simulate real-world cab booking and driver management workflows.",
-    image: "/Projects/uberProject.png",
-    tags: ["Java", "Spring Boot", "Docker", "PostgreSQL"],
-    link: "#",
-    github: "https://github.com/bPratikesh/UberApp",
-  },
-  {
     title: "Air BNB Hotel room Booking Clone",
     description:
       "An Airbnb-inspired hotel booking web application designed for property browsing, room booking, and user management. Built to simulate real-world booking workflows with a responsive interface and scalable backend functionality.",
@@ -25,8 +16,72 @@ const projects = [
       "Docker",
       "PostgreSQL",
     ],
-    link: "#",
-    github: "https://github.com/bPratikesh/hotelBooking-frontend",
+    link: null,
+    github: [
+      {
+        label: "Frontend Repository",
+        url: "https://github.com/bPratikesh/hotelBooking-frontend",
+      },
+      {
+        label: "Backend Repository",
+        url: "https://github.com/bPratikesh/hotelBooking-backend",
+      },
+    ],
+  },
+  {
+    title: "Doc Care Management system",
+    description:
+      "A full-stack Doctor & Patient Management System built with React, Spring Boot, and MySQL that streamlines healthcare operations through secure authentication, appointment scheduling, digital prescriptions, online payments, doctor reviews, dashboard analytics, and role-based access for doctors and patients.",
+    image: "/Projects/docCareProject.png",
+    tags: ["Java", "Spring Boot", "JavaScript", "React", "ShadCN", "MySql"],
+    link: null,
+    github: [
+      {
+        label: "Frontend Repository",
+        url: "https://github.com/bPratikesh/HospitalManagementSystemFrontend",
+      },
+      {
+        label: "Backend Repository",
+        url: "https://github.com/bPratikesh/HospitalManagementSystem",
+      },
+    ],
+  },
+  {
+    title: "Uber Cab Booking Clone",
+    description:
+      "An Uber-inspired ride-hailing web application built using Spring Boot, featuring ride booking, user management, and fare calculation. Developed with industry-style backend APIs to simulate real-world cab booking and driver management workflows.",
+    image: "/Projects/uberProject.png",
+    tags: ["Java", "Spring Boot", "Docker", "PostgreSQL"],
+    link: null,
+    github: [
+      {
+        label: "Backend Repository",
+        url: "https://github.com/bPratikesh/UberApp",
+      },
+    ],
+  },
+  {
+    title: "LinkedIn Clone – Microservices Backend",
+    description:
+      "A scalable LinkedIn clone backend built with Spring Boot microservices featuring JWT authentication, Neo4j-based connection graphs, Kafka-powered real-time notifications, Dockerized deployment, and secure user and post management APIs.",
+    image: "/Projects/linkedInProject.png",
+    tags: [
+      "Java",
+      "Spring Boot",
+      "Microservices",
+      "Spring Security",
+      "Docker",
+      "Kafka",
+      "PostgreSQL",
+      "Neo4j",
+    ],
+    link: null,
+    github: [
+      {
+        label: "Backend Repository",
+        url: "https://github.com/bPratikesh/LinkedIn-Application",
+      },
+    ],
   },
 ];
 
@@ -71,18 +126,28 @@ export const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/5 to-transparent backdrop-opacity-10" />
                 {/* Overlay Links(actualweb link and github link) */}
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-                  <a
-                    href={project.github}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <FiGithub className="w-5 h-5" />
-                  </a>
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    >
+                      <ArrowUpRight className="w-5 h-5" />
+                    </a>
+                  )}
+                  <div className="flex gap-3">
+                    {project.github.map((repo, idx) => (
+                      <a
+                        key={idx}
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={repo.label}
+                        className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all cursor-pointer"
+                      >
+                        <FiGithub className="w-5 h-5" />
+                      </a>
+                    ))}
+                  </div>
                 </div>
               </div>
               {/* Content */}
@@ -91,10 +156,6 @@ export const Projects = () => {
                   <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <ArrowUpRight
-                    className="w-5 h-5 text-muted-foreground group-hover:text-primary 
-                  group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
-                  />
                 </div>
                 <p className="text-muted-foreground text-sm">
                   {project.description}
